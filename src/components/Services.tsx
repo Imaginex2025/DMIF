@@ -59,8 +59,8 @@ export const Services = () => {
   }, [progress]);
 
   return (
-    <section className="container py-6">
-      <div className="grid lg:grid-cols-[1fr,1fr] gap-8 place-items-end">
+    <section  className="container py-6 md:py-24">
+      <div  className="grid lg:grid-cols-[1fr,1fr] gap-8 place-items-end">
         {/* Left Side - All Services */}
         <div>
           <h2 className="text-3xl md:text-4xl font-bold">
@@ -70,7 +70,7 @@ export const Services = () => {
             We Provide
           </h2>
 
-          <p className="text-muted-foreground text-xl mt-4 mb-8">
+          <p  className="text-muted-foreground text-xl mt-4 mb-8">
             Discover how we help you succeed
           </p>
 
@@ -94,9 +94,7 @@ export const Services = () => {
                     <CardHeader className="space-y-1 flex md:flex-row justify-start items-start gap-4">
                       <div
                         className={`mt-1 p-1 rounded-2xl ${
-                          isActive
-                            ? "bg-primary text-white"
-                            : "bg-primary/20 text-primary"
+                             "bg-primary/20 text-primary"
                         }`}
                       >
                         {service.icon}

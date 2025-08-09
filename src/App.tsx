@@ -22,7 +22,7 @@ function App() {
       <Navbar />
       <Hero />
       <About />
-<div id="Programs">
+<div id="">
         <OurProgram/>
 </div>
       <WhyItMatters />

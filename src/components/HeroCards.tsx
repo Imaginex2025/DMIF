@@ -59,9 +59,9 @@ export const HeroCards = () => {
         <Card className="flex flex-col justify-center items-center drop-shadow-xl shadow-black/10 dark:shadow-white/10">
           <CardHeader className="mt-8 flex justify-center items-center pb-2">
             <img
-              src="https://i.ibb.co/WKB3hys/dr-madhan.jpg"
+              src="./image.JPG"
               alt="Dr. Madhan"
-              className="absolute grayscale-[0%] -top-12 rounded-full w-24 h-24 aspect-square object-cover"
+              className="absolute grayscale-[0%] top-1 right-19 rounded-full w-14 h-14 aspect-square object-cover"
             />
             <CardTitle className="text-center">Dr. Madhan Kumar</CardTitle>
             <CardDescription className="font-normal text-primary">

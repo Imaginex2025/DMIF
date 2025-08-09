@@ -62,7 +62,7 @@ const pricingList: PricingProps[] = [
 
 export const Pricing = () => {
   return (
-    <section id="pricing" className="container py-6">
+    <section id="pricing" className="container md:py-24 py-6">
       <motion.h2
         className="text-3xl md:text-4xl font-bold text-center"
         initial={{ opacity: 0, y: -20 }}

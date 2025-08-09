@@ -14,36 +14,37 @@ interface FAQProps {
 
 const FAQList: FAQProps[] = [
   {
-    question: "Is this template free?",
-    answer: "Yes. It is a free ChadcnUI template.",
+    question: "What is DMIF?",
+    answer:
+      "DMIF (Dr. Madhan Innovation Foundation) is an initiative to guide innovators, researchers, and entrepreneurs in transforming their ideas into patents, publications, and startups.",
     value: "item-1",
   },
   {
-    question: "Lorem ipsum dolor sit amet consectetur adipisicing elit?",
+    question: "Who can apply for the Patent Track?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint labore quidem quam? Consectetur sapiente iste rerum reiciendis animi nihil nostrum sit quo, modi quod.",
+      "Any student, researcher, or innovator with a unique idea that can be documented for intellectual property protection is eligible for the Patent Track.",
     value: "item-2",
   },
   {
-    question:
-      "Lorem ipsum dolor sit amet  Consectetur natus dolores minus quibusdam?",
+    question: "Do you provide research publication guidance?",
     answer:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore qui nostrum reiciendis veritatis necessitatibus maxime quis ipsa vitae cumque quo?",
+      "Yes. Through our Research Track, we mentor participants in writing and submitting publication-ready research papers to top-tier journals and conferences.",
     value: "item-3",
   },
   {
-    question: "Lorem ipsum dolor sit amet, consectetur adipisicing elit?",
-    answer: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+    question: "Is there startup support available?",
+    answer:
+      "Absolutely. Our Startup Support program offers IP foundation, mentorship, and strategic guidance to help you launch and scale your venture.",
     value: "item-4",
   },
   {
-    question:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur natus?",
+    question: "How do I get started with DMIF programs?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint labore quidem quam? Consectetur sapiente iste rerum reiciendis animi nihil nostrum sit quo, modi quod.",
+      "You can explore our programs on the website and apply through the online form. Our team will review your application and connect with you for the next steps.",
     value: "item-5",
   },
 ];
+
 
 export const FAQ = () => {
   return (

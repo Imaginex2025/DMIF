@@ -9,7 +9,7 @@ import {
 import growthImg from "../assets/growth.png";
 import reflectingImg from "../assets/reflecting.png";
 import lookingAheadImg from "../assets/looking-ahead.png";
-import { motion, useAnimation, useInView } from "framer-motion";
+import { motion, useAnimation, useInView, Variants } from "framer-motion";
 import { useEffect, useRef } from "react";
 
 interface FeatureProps {
@@ -49,7 +49,7 @@ const highlightList: string[] = [
 
 export const WhyItMatters = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, threshold: 0.1 });
+  const isInView = useInView(ref, { once: true });
   const controls = useAnimation();
 
   useEffect(() => {
@@ -58,7 +58,8 @@ export const WhyItMatters = () => {
     }
   }, [isInView, controls]);
 
-  const containerVariants = {
+  // Type-safe variants
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -66,7 +67,7 @@ export const WhyItMatters = () => {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
@@ -75,7 +76,7 @@ export const WhyItMatters = () => {
     },
   };
 
-  const badgeVariants = {
+  const badgeVariants: Variants = {
     hidden: { opacity: 0, scale: 0.8 },
     visible: (i: number) => ({
       opacity: 1,
@@ -84,7 +85,7 @@ export const WhyItMatters = () => {
     }),
   };
 
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: (i: number) => ({
       opacity: 1,

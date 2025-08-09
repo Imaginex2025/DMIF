@@ -1,11 +1,11 @@
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "../../src/components/ui/tabs";
-import { CheckCircle } from 'lucide-react';
-import { motion, useAnimation, useInView } from "framer-motion";
+import { CheckCircle } from "lucide-react";
+import { motion, useAnimation, useInView, Variants } from "framer-motion";
 import { useEffect, useRef } from "react";
 
 const OurProgram = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, threshold: 0.1 });
+  const isInView = useInView(ref, { once: true });
   const controls = useAnimation();
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const OurProgram = () => {
   }, [isInView, controls]);
 
   // Animation variants
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -23,27 +23,31 @@ const OurProgram = () => {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] } },
   };
 
-  const listVariants = {
+  const listVariants: Variants = {
     hidden: { opacity: 0, y: 10 },
-    visible: (i) => ({
+    visible: (i: number) => ({
       opacity: 1,
       y: 0,
-      transition: { delay: 0.3 + i * 0.1, duration: 0.5 },
+      transition: { delay: 0.3 + i * 0.1, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] },
     }),
   };
 
-  const imageVariants = {
+  const imageVariants: Variants = {
     hidden: { opacity: 0, scale: 0.98 },
-    visible: { opacity: 1, scale: 1, transition: { delay: 0.6, duration: 0.7, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { delay: 0.6, duration: 0.7, ease: [0.25, 0.1, 0.25, 1] },
+    },
   };
 
   return (
-    <section id="programs" className="py-20" ref={ref}>
+    <section id="Programs" className="py-20" ref={ref}>
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Heading */}
