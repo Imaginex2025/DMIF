@@ -1,7 +1,7 @@
 import { About } from "./components/About";
 import { Cta } from "./components/Cta";
 import { FAQ } from "./components/FAQ";
-import { Features } from "./components/Features";
+import { WhyItMatters } from "./components/Features";
 import { Footer } from "./components/Footer";
 import { Hero } from "./components/Hero";
 import { HowItWorks } from "./components/HowItWorks";
@@ -14,22 +14,24 @@ import { Sponsors } from "./components/Sponsors";
 import { Team } from "./components/Team";
 import { Testimonials } from "./components/Testimonials";
 import "./App.css";
+import OurProgram from "./components/OurProgram";
 
 function App() {
   return (
     <>
       <Navbar />
       <Hero />
-      <Sponsors />
       <About />
-      <HowItWorks />
-      <Features />
-      <Services />
+<div id="Programs">
+        <OurProgram/>
+</div>
+      <WhyItMatters />
+<div id="Service">
+        <Services />
+</div>
       <Cta />
       <Testimonials />
-      <Team />
       <Pricing />
-      <Newsletter />
       <FAQ />
       <Footer />
       <ScrollToTop />

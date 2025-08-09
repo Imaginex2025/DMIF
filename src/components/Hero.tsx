@@ -2,56 +2,79 @@ import { Button } from "./ui/button";
 import { buttonVariants } from "./ui/button";
 import { HeroCards } from "./HeroCards";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
+import { motion } from "framer-motion";
 
 export const Hero = () => {
   return (
-    <section className="container grid lg:grid-cols-2 place-items-center py-20 md:py-32 gap-10">
+    <section className="container grid lg:grid-cols-2 place-items-center py-20 md:py-32 gap-10 relative">
+      {/* Left Side - Text & Buttons */}
       <div className="text-center lg:text-start space-y-6">
-        <main className="text-5xl md:text-6xl font-bold">
+        <motion.main
+          className="text-5xl md:text-6xl font-bold"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <h1 className="inline">
-            <span className="inline bg-gradient-to-r from-[#F596D3]  to-[#D247BF] text-transparent bg-clip-text">
-              Shadcn
-            </span>{" "}
-            landing page
+            <span className="inline text-primary">Dr. Madhan</span> Institute of
           </h1>{" "}
-          for{" "}
           <h2 className="inline">
-            <span className="inline bg-gradient-to-r from-[#61DAFB] via-[#1fc0f1] to-[#03a3d7] text-transparent bg-clip-text">
-              React
-            </span>{" "}
-            developers
+            <span className="inline text-primary">Technology</span>
           </h2>
-        </main>
+        </motion.main>
 
-        <p className="text-xl text-muted-foreground md:w-10/12 mx-auto lg:mx-0">
-          Build your React landing page effortlessly with the required sections
-          to your project.
-        </p>
+        <motion.p
+          className="text-xl text-muted-foreground md:w-10/12 mx-auto lg:mx-0"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+        >
+          Build intellectual property, create meaningful impact, and launch your future through mentorship-based innovation and research programs.
+        </motion.p>
 
-        <div className="space-y-4 md:space-y-0 md:space-x-4">
-          <Button className="w-full md:w-1/3">Get Started</Button>
+        <motion.div
+          className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 items-center justify-center lg:justify-start"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+        >
+          <Button className="w-full text-white md:w-1/3">Explore Programs</Button>
 
           <a
             rel="noreferrer noopener"
-            href="https://github.com/leoMirandaa/shadcn-landing-page.git"
+            href=""
             target="_blank"
             className={`w-full md:w-1/3 ${buttonVariants({
               variant: "outline",
             })}`}
           >
-            Github Repository
-            <GitHubLogoIcon className="ml-2 w-5 h-5" />
+            Apply Now
           </a>
-        </div>
+        </motion.div>
       </div>
 
-      {/* Hero cards sections */}
-      <div className="z-10">
+      {/* Right Side - HeroCards */}
+      <motion.div
+        initial={{ opacity: 0, x: 30 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+        className="z-10"
+      >
         <HeroCards />
-      </div>
+      </motion.div>
 
-      {/* Shadow effect */}
-      <div className="shadow"></div>
+      {/* Shadow Effect - Animated */}
+{/* Shadow Effect - Animated */}
+<motion.div
+  className="absolute shadow inset-0 -z-10 bg-gradient-to-b from-transparent via-black/10 to-black/20 rounded-full blur-2xl sm:blur-3xl"
+  initial={{ scale: 0.8, opacity: 0 }} // bigger start for mobile visibility
+  animate={{ scale: 1.5, opacity: 0.4 }}
+  transition={{
+    scale: { duration: 3, ease: "easeOut" },
+    opacity: { duration: 2, delay: 0.5 },
+  }}
+/>
+
     </section>
   );
 };

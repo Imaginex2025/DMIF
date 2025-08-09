@@ -25,12 +25,12 @@ interface RouteProps {
 
 const routeList: RouteProps[] = [
   {
-    href: "#features",
-    label: "Features",
+    href: "#Programs",
+    label: "Programs",
   },
   {
-    href: "#testimonials",
-    label: "Testimonials",
+    href: "#Service",
+    label: "Service",
   },
   {
     href: "#pricing",
@@ -55,7 +55,7 @@ export const Navbar = () => {
               className="ml-2 font-bold text-xl flex"
             >
               <LogoIcon />
-              ShadcnUI/React
+              DMIF
             </a>
           </NavigationMenuItem>
 
@@ -133,8 +133,8 @@ export const Navbar = () => {
               target="_blank"
               className={`border ${buttonVariants({ variant: "secondary" })}`}
             >
-              <GitHubLogoIcon className="mr-2 w-5 h-5" />
-              Github
+
+              Apply Now
             </a>
 
             <ModeToggle />
