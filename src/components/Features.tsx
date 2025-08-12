@@ -95,13 +95,17 @@ export const WhyItMatters = () => {
   };
 
   return (
-    <section id="why-it-matters" className="container py-6 space-y-8" ref={ref}>
+    <section
+      id="why-it-matters"
+      className="container py-4 sm:py-6 space-y-4 sm:space-y-8"
+      ref={ref}
+    >
       {/* Heading */}
       <motion.h2
         variants={itemVariants}
         initial="hidden"
         animate={controls}
-        className="text-3xl lg:text-4xl font-bold md:text-center"
+        className="text-2xl md:text-3xl lg:text-4xl font-bold md:text-center"
       >
         Why{" "}
         <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
@@ -114,11 +118,11 @@ export const WhyItMatters = () => {
         variants={containerVariants}
         initial="hidden"
         animate={controls}
-        className="flex flex-wrap md:justify-center gap-4"
+        className="flex flex-wrap md:justify-center gap-2 sm:gap-4"
       >
         {highlightList.map((item, i) => (
           <motion.div key={item} custom={i} variants={badgeVariants}>
-            <Badge variant="secondary" className="text-sm">
+            <Badge variant="secondary" className="text-[10px] sm:text-sm">
               {item}
             </Badge>
           </motion.div>
@@ -130,7 +134,7 @@ export const WhyItMatters = () => {
         variants={containerVariants}
         initial="hidden"
         animate={controls}
-        className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+        className="grid gap-4 md:grid-cols-2 lg:grid-cols-3"
       >
         {features.map((feature, i) => (
           <motion.div
@@ -150,15 +154,19 @@ export const WhyItMatters = () => {
               }}
             >
               <CardHeader>
-                <CardTitle className="text-primary">{feature.title}</CardTitle>
+                <CardTitle className="text-base sm:text-lg text-green-500 md:text-primary">
+                  {feature.title}
+                </CardTitle>
               </CardHeader>
-              <CardContent className="flex-grow">{feature.description}</CardContent>
+              <CardContent className="flex-grow text-sm sm:text-base">
+                {feature.description}
+              </CardContent>
               {feature.image && (
                 <CardFooter>
                   <motion.img
                     src={feature.image}
                     alt={feature.title}
-                    className="w-[200px] lg:w-[300px] mx-auto transition-transform duration-300"
+                    className="w-[140px] sm:w-[200px] lg:w-[300px] mx-auto transition-transform duration-300"
                     whileHover={{ y: -4, transition: { duration: 0.2 } }}
                   />
                 </CardFooter>

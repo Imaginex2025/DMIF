@@ -95,22 +95,6 @@ export const FAQ = () => {
         ))}
       </Accordion>
 
-      <motion.h3
-        className="font-medium mt-4"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.2 }}
-        viewport={{ once: true }}
-      >
-        Still have questions?{" "}
-        <a
-          rel="noreferrer noopener"
-          href="#"
-          className="text-primary transition-all border-primary hover:border-b-2"
-        >
-          Contact us
-        </a>
-      </motion.h3>
     </section>
   );
 };

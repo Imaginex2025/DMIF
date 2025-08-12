@@ -38,8 +38,8 @@ export const HeroCards = () => {
               <AvatarFallback>AM</AvatarFallback>
             </Avatar>
             <div className="flex flex-col">
-              <CardTitle className="text-lg">Ananya Mehta</CardTitle>
-              <CardDescription>@innovator_ananya</CardDescription>
+              <CardTitle className="text-lg">Gagan Deep Khosla</CardTitle>
+              <CardDescription>Distinguished Engineer, Zensar</CardDescription>
             </div>
           </CardHeader>
           <CardContent>
@@ -73,19 +73,7 @@ export const HeroCards = () => {
             <div>
               <a
                 rel="noreferrer noopener"
-                href="https://github.com/drmadhan"
-                target="_blank"
-                className={buttonVariants({
-                  variant: "ghost",
-                  size: "sm",
-                })}
-              >
-                <span className="sr-only">Github icon</span>
-                <GitHubLogoIcon className="w-5 h-5" />
-              </a>
-              <a
-                rel="noreferrer noopener"
-                href="https://www.linkedin.com/in/drmadhankumar/"
+                href="https://www.linkedin.com/in/drmadhaniimcal/"
                 target="_blank"
                 className={buttonVariants({
                   variant: "ghost",

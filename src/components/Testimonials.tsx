@@ -79,14 +79,14 @@ export const Testimonials = () => {
       </motion.h2>
 
       <motion.p
-        className="text-xl text-muted-foreground pt-4 pb-8"
+        className="text-xl max-w-4xl text-muted-foreground pt-4 pb-8"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.1 }}
         viewport={{ once: true }}
       >
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non unde error
-        facere hic reiciendis illo
+Experience what makes our program stand out. From unmatched value to proven results,
+    hear from real people who have transformed their journey with us.
       </motion.p>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-4 sm:block columns-2 lg:columns-3 lg:gap-6 mx-auto space-y-4 lg:space-y-6">

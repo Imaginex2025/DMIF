@@ -39,16 +39,13 @@ export const Services = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [progress, setProgress] = useState(0);
 
-  // Progress animation
   useEffect(() => {
     const progressInterval = setInterval(() => {
-      setProgress((prev) => (prev >= 100 ? 100 : prev + 2)); // 3s
+      setProgress((prev) => (prev >= 100 ? 100 : prev + 2));
     }, 60);
-
     return () => clearInterval(progressInterval);
   }, []);
 
-  // Change service when progress completes
   useEffect(() => {
     if (progress >= 100) {
       setTimeout(() => {
@@ -59,22 +56,31 @@ export const Services = () => {
   }, [progress]);
 
   return (
-    <section  className="container py-6 md:py-24">
-      <div  className="grid lg:grid-cols-[1fr,1fr] gap-8 place-items-end">
+    <section className="container py-6 md:py-24">
+      <div
+        className="
+          grid 
+          grid-cols-1      /* Mobile: single column */
+          lg:grid-cols-[1fr,1fr]  /* Desktop: two equal columns */
+          gap-8 
+          place-items-center  /* Center items on mobile */
+          lg:place-items-end  /* Align end on desktop */
+        "
+      >
         {/* Left Side - All Services */}
-        <div>
-          <h2 className="text-3xl md:text-4xl font-bold">
+        <div className="w-full  px-4 lg:px-0">
+          <h2 className="text-3xl md:text-4xl font-bold text-center lg:text-left">
             <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
               Services{" "}
             </span>
             We Provide
           </h2>
 
-          <p  className="text-muted-foreground text-xl mt-4 mb-8">
+          <p className="text-muted-foreground text-xl mt-4 mb-8 text-center lg:text-left">
             Discover how we help you succeed
           </p>
 
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-6">
             {serviceList.map((service, i) => {
               const isActive = currentIndex === i;
               return (
@@ -91,20 +97,19 @@ export const Services = () => {
                         : "border-transparent"
                     }`}
                   >
-                    <CardHeader className="space-y-1 flex md:flex-row justify-start items-start gap-4">
+                    <CardHeader className="space-y-1 flex flex-col md:flex-row justify-start items-center md:items-start gap-4">
                       <div
-                        className={`mt-1 p-1 rounded-2xl ${
-                             "bg-primary/20 text-primary"
-                        }`}
+                        className={`mt-1 p-2 rounded-2xl ${
+                          "bg-primary/20 text-primary"
+                        } flex items-center justify-center w-12 h-12 md:w-auto md:h-auto`}
                       >
                         {service.icon}
                       </div>
-                      <div className="flex-1">
+                      <div className="flex-1 text-center md:text-left">
                         <CardTitle>{service.title}</CardTitle>
                         <CardDescription className="text-md mt-2">
                           {service.description}
                         </CardDescription>
-                        {/* Progress bar for active service */}
                         {isActive && (
                           <div className="mt-4 bg-gray-200 dark:bg-gray-700 h-1 rounded overflow-hidden">
                             <motion.div
@@ -130,11 +135,11 @@ export const Services = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="flex justify-center"
+          className="flex justify-center w-full max-w-md md:max-w-lg lg:max-w-xl px-4 lg:px-0"
         >
           <img
             src={serviceList[currentIndex].image}
-            className="w-[300px] md:w-[500px] lg:w-[600px] object-contain"
+            className="w-full max-w-xs sm:max-w-sm md:max-w-md rounded-lg lg:max-w-lg object-contain"
             alt={serviceList[currentIndex].title}
           />
         </motion.div>

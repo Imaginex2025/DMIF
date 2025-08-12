@@ -24,6 +24,10 @@ interface RouteProps {
 }
 
 const routeList: RouteProps[] = [
+    {
+    href: "#Home",
+    label: "Home",
+  },
   {
     href: "#Programs",
     label: "Programs",
@@ -31,10 +35,6 @@ const routeList: RouteProps[] = [
   {
     href: "#Service",
     label: "Service",
-  },
-  {
-    href: "#pricing",
-    label: "Pricing",
   },
   {
     href: "#faq",
@@ -61,7 +61,7 @@ export const Navbar = () => {
 
           {/* mobile */}
           <span className="flex md:hidden">
-            <ModeToggle />
+
 
             <Sheet
               open={isOpen}
@@ -79,7 +79,7 @@ export const Navbar = () => {
               <SheetContent side={"left"}>
                 <SheetHeader>
                   <SheetTitle className="font-bold text-xl">
-                    Shadcn/React
+                    DMIF
                   </SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-col justify-center items-center gap-2 mt-4">
@@ -94,17 +94,7 @@ export const Navbar = () => {
                       {label}
                     </a>
                   ))}
-                  <a
-                    rel="noreferrer noopener"
-                    href="https://github.com/leoMirandaa/shadcn-landing-page.git"
-                    target="_blank"
-                    className={`w-[110px] border ${buttonVariants({
-                      variant: "secondary",
-                    })}`}
-                  >
-                    <GitHubLogoIcon className="mr-2 w-5 h-5" />
-                    Github
-                  </a>
+                 
                 </nav>
               </SheetContent>
             </Sheet>
@@ -127,17 +117,14 @@ export const Navbar = () => {
           </nav>
 
           <div className="hidden md:flex gap-2">
-            <a
-              rel="noreferrer noopener"
-              href="https://github.com/leoMirandaa/shadcn-landing-page.git"
-              target="_blank"
-              className={`border ${buttonVariants({ variant: "secondary" })}`}
-            >
+    <a
+  href="#Contact"
+  className={`border ${buttonVariants({ variant: "secondary" })} cursor-pointer hover:scale-110 duration-300 transform`}
+>
+  Apply Now
+</a>
 
-              Apply Now
-            </a>
 
-            <ModeToggle />
           </div>
         </NavigationMenuList>
       </NavigationMenu>

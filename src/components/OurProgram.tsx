@@ -55,12 +55,12 @@ const OurProgram = () => {
             variants={containerVariants}
             initial="hidden"
             animate={controls}
-            className="text-center mb-16"
+            className="text-center  mb-4 md:mb-16"
           >
-            <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-bold mb-6">
+            <motion.h2 variants={itemVariants} className="text-2xl sm:text-4xl md:text-5xl font-bold mb-2 md:mb-6">
               Our Programs
             </motion.h2>
-            <motion.p variants={itemVariants} className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <motion.p variants={itemVariants} className="text-sm sm:text-xl text-gray-600 max-w-3xl mx-auto">
               Choose your path to innovation - Patent Track for inventors or Research Track for scholars
             </motion.p>
           </motion.div>
@@ -68,9 +68,9 @@ const OurProgram = () => {
           {/* Tabs */}
           <Tabs defaultValue="patent" className="w-full">
             <motion.div variants={containerVariants} initial="hidden" animate={controls}>
-              <TabsList className="grid rounded-lg w-full grid-cols-2 mb-12">
-                <TabsTrigger value="patent">Patent Track</TabsTrigger>
-                <TabsTrigger value="research">Research Track</TabsTrigger>
+              <TabsList className="grid rounded-lg w-full grid-cols-2 mb-4 md:mb-12">
+                <TabsTrigger className="text-sm sm:text-base" value="patent">Patent Track</TabsTrigger>
+                <TabsTrigger className="text-sm sm:text-base" value="research">Research Track</TabsTrigger>
               </TabsList>
             </motion.div>
 
@@ -84,10 +84,10 @@ const OurProgram = () => {
               >
                 <motion.div variants={itemVariants}>
                   <div className="mb-8">
-                    <motion.h3 variants={itemVariants} className="text-3xl font-bold mb-4">
+                    <motion.h3 variants={itemVariants} className="text-xl sm:text-3xl font-bold mb-4">
                       Patent Track
                     </motion.h3>
-                    <motion.p variants={itemVariants} className="text-lg text-gray-600 mb-6">
+                    <motion.p variants={itemVariants} className="text-sm sm:text-lg text-gray-600 mb-6">
                       Transform your ideas into intellectual property with patent-ready documentation and startup
                       foundation support.
                     </motion.p>
@@ -106,16 +106,24 @@ const OurProgram = () => {
                           className="flex items-center gap-3"
                         >
                           <CheckCircle className="w-5 h-5 text-green-500" />
-                          <span>{text}</span>
+                          <span className="text-sm sm:text-base">{text}</span>
                         </motion.div>
                       ))}
                     </motion.div>
                   </div>
-                  <motion.div variants={itemVariants} className="bg-white p-6 rounded-lg border">
+                  <motion.div
+                    variants={itemVariants}
+                    className="bg-white p-6 rounded-lg border relative overflow-hidden"
+                  >
+                    {/* Offer Ends Soon Badge */}
+                    <div className="absolute top-4 right-4 bg-red-500 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md animate-pulse">
+                      OFFER ENDS SOON!
+                    </div>
+
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-gray-400 line-through mb-2">$1,500</div>
-                      <div className="text-5xl font-bold text-orange-600 mb-2">$899</div>
-                      <p className="text-sm text-gray-600">Early Bird Discount - Limited Time</p>
+                      <div className="text-xl sm:text-3xl font-bold text-gray-400 line-through mb-2">$1,500</div>
+                      <div className="text-3xl sm:text-5xl font-bold text-orange-600 mb-2">$899</div>
+                      <p className="text-xs sm:text-sm text-gray-600">Early Bird Discount - Limited Time</p>
                     </div>
                   </motion.div>
                 </motion.div>
@@ -140,10 +148,10 @@ const OurProgram = () => {
               >
                 <motion.div variants={itemVariants}>
                   <div className="mb-8">
-                    <motion.h3 variants={itemVariants} className="text-3xl font-bold mb-4">
+                    <motion.h3 variants={itemVariants} className="text-xl sm:text-3xl font-bold mb-4">
                       Research Track
                     </motion.h3>
-                    <motion.p variants={itemVariants} className="text-lg text-gray-600 mb-6">
+                    <motion.p variants={itemVariants} className="text-sm sm:text-lg text-gray-600 mb-6">
                       Develop publication-ready research papers for IEEE, Springer, and ACM conferences with
                       professional presentation support.
                     </motion.p>
@@ -162,16 +170,24 @@ const OurProgram = () => {
                           className="flex items-center gap-3"
                         >
                           <CheckCircle className="w-5 h-5 text-green-500" />
-                          <span>{text}</span>
+                          <span className="text-sm sm:text-base">{text}</span>
                         </motion.div>
                       ))}
                     </motion.div>
                   </div>
-                  <motion.div variants={itemVariants} className="bg-white p-6 rounded-lg border">
+                  <motion.div
+                    variants={itemVariants}
+                    className="bg-white p-6 rounded-lg border relative"
+                  >
+                    {/* Offer Ends Soon Badge */}
+                    <div className="absolute top-4 right-4 bg-red-500 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md animate-pulse z-10">
+                      OFFER ENDS SOON!
+                    </div>
+
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-gray-400 line-through mb-2">$1,000</div>
-                      <div className="text-5xl font-bold text-green-600 mb-2">$599</div>
-                      <p className="text-sm text-gray-600">Early Bird Discount - Limited Time</p>
+                      <div className="text-xl sm:text-3xl font-bold text-gray-400 line-through mb-2">₹999</div>
+                      <div className="text-3xl sm:text-5xl font-bold text-orange-600 mb-2">₹599</div>
+                      <p className="text-xs sm:text-sm text-gray-600">Special Discount - Limited Time</p>
                     </div>
                   </motion.div>
                 </motion.div>

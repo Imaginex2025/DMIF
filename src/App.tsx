@@ -15,6 +15,7 @@ import { Services } from "./components/Services";
 import { Testimonials } from "./components/Testimonials";
 import "./App.css";
 import OurProgram from "./components/OurProgram";
+import {ContactDark  } from "./components/Contact";
 
 function App() {
   return (
@@ -31,7 +32,7 @@ function App() {
 </div>
       <Cta />
       <Testimonials />
-      <Pricing />
+      <ContactDark/>
       <FAQ />
       <Footer />
       <ScrollToTop />
