@@ -2,8 +2,8 @@ import { Card, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { MagnifierIcon, WalletIcon, ChartIcon } from "./Icons";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import cubeLeg from "../../public/patent.avif";
-import cubeAlt from "../../public/Research.webp"; // Example alt images
+import cubeLeg from "/patent.avif";
+import cubeAlt from "/Research.webp"; // Example alt images
 
 interface ServiceProps {
   title: string;

@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/card";
 import { Check, Linkedin } from "lucide-react";
 import { LightBulbIcon } from "./Icons";
-import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { motion } from "framer-motion";
 
 export const HeroCards = () => {
