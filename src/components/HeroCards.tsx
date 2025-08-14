@@ -33,7 +33,7 @@ export const HeroCards = () => {
         <Card className="drop-shadow-xl shadow-black/10 dark:shadow-white/10">
           <CardHeader className="flex flex-row items-center gap-4 pb-2">
             <Avatar>
-              <AvatarImage alt="" src="https://i.pravatar.cc/150?img=32" />
+              <AvatarImage alt="" src="/Testimonials/GaganDeep.jpg" />
               <AvatarFallback>AM</AvatarFallback>
             </Avatar>
             <div className="flex flex-col">
@@ -58,7 +58,7 @@ export const HeroCards = () => {
         <Card className="flex flex-col justify-center items-center drop-shadow-xl shadow-black/10 dark:shadow-white/10">
           <CardHeader className="mt-8 flex justify-center items-center pb-2">
             <img
-              src="./image.JPG"
+              src="/Testimonials/VIT.jfif.jpg"
               alt="Dr. Madhan"
               className="absolute grayscale-[0%] top-1 right-19 rounded-full w-14 h-14 aspect-square object-cover"
             />

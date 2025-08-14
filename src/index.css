@@ -17,6 +17,10 @@ html {
   animation: shadow-slide infinite 4s linear alternate;
 }
 
+::-webkit-scrollbar{
+  display: none;
+}
+
 @keyframes shadow-slide {
   from {
     background: hsl(var(--primary) / 20%);

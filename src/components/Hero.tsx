@@ -19,7 +19,7 @@ export const Hero = () => {
             <span className="inline text-primary">Dr. Madhan</span> Institute of
           </h1>{" "}
           <h2 className="inline">
-            <span className="inline text-primary">Technology</span>
+            <span className="inline text-primary">Future </span>
           </h2>
         </motion.main>
 
