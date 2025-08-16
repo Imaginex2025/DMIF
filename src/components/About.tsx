@@ -167,7 +167,7 @@ export const About = () => {
             whileTap={{ scale: 0.98 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
           >
-            <Card className="bg-muted/50 transition-colors duration-300 hover:bg-muted/70">
+            <Card className="bg-muted/50 transition-colors h-full duration-300 hover:bg-muted/70">
               <CardHeader>
                 <CardTitle className="grid gap-4 place-items-center text-lg sm:text-xl">
                   {feature.icon}

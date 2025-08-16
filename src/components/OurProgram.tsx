@@ -47,7 +47,7 @@ const OurProgram = () => {
   };
 
   return (
-    <section id="Programs" className="py-20" ref={ref}>
+    <section id="Programs" className="py-10 md:py-20" ref={ref}>
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Heading */}

@@ -25,15 +25,18 @@ export const Footer = () => {
   return (
     <footer className="text-white border-t border-[#2E2132] text-xs sm:text-sm">
       <div className="flex flex-col md:flex-row justify-between gap-10 px-5 sm:px-20 py-10">
-        
         {/* Left - Logo & Description */}
         <div className="flex-1 flex flex-col items-start">
-          <a href="/" className="font-bold text-2xl flex items-center gap-2 mb-4">
+          <a
+            href="/"
+            className="font-bold text-2xl flex items-center gap-2 mb-4"
+          >
             <LogoIcon />
             DMIF
           </a>
           <p className="mt-2 text-gray-400 max-w-xs">
-DMIF provides digital media solutions to help businesses grow online with innovative technology and expert support.
+            DMIF provides digital media solutions to help businesses grow online
+            with innovative technology and expert support.
           </p>
         </div>
 
@@ -56,38 +59,26 @@ DMIF provides digital media solutions to help businesses grow online with innova
         </div>
 
         {/* Right - Contact Info */}
-{/* Right - Contact Info */}
-<div className="flex-1 text-sm leading-relaxed md:items-end md:text-right space-y-2">
-  <p>
-    <strong>Mail:</strong>{" "}
-    <a href="mailto:reach@drmadhan.in" className="hover:text-green-400">
-      reach@drmadhan.in
-    </a>
-  </p>
-  <p>
-    <strong>Website:</strong>{" "}
-    <a
-      href="https://www.drmadhan.in"
-      target="_blank"
-      rel="noreferrer"
-      className="hover:text-green-400"
-    >
-      www.drmadhan.in
-    </a>
-  </p>
-  <p>
-    <strong>Number:</strong>{" "}
-    <a href="tel:+919994326696" className="hover:text-green-400">
-      +91-9994326696
-    </a>
-  </p>
-
-  {/* Address below contact info */}
-  <p className="mt-4">
-    <strong>Address:</strong> 123, Example Street, Bangalore, Karnataka, India - 560001
-  </p>
-</div>
-
+        {/* Right - Contact Info */}
+        <div className="flex-1 text-sm leading-relaxed md:items-end md:text-right space-y-2">
+          <p>
+            <strong>Mail:</strong>{" "}
+            <a href="mailto:reach@drmadhan.in" className="hover:text-green-400">
+              reach@drmadhan.in
+            </a>
+          </p>
+          <p>
+            <strong>Website:</strong>{" "}
+            <a
+              href="https://www.drmadhan.in"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-green-400"
+            >
+              www.drmadhan.in
+            </a>
+          </p>
+        </div>
       </div>
 
       {/* Footer Bottom */}

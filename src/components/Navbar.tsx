@@ -15,6 +15,8 @@ import {
 import { buttonVariants } from "./ui/button";
 import { Menu } from "lucide-react";
 import { LogoIcon } from "./Icons";
+import { Link } from "react-router-dom"; // ✅ Import Link
+import { appRoutes } from "../Routes/route"; // ✅ Assuming you export your route paths here
 
 interface RouteProps {
   href: string;
@@ -22,22 +24,23 @@ interface RouteProps {
 }
 
 const routeList: RouteProps[] = [
-    {
-    href: "#Home",
+  {
+    href: appRoutes.home,
     label: "Home",
   },
   {
-    href: "#Programs",
+    href: appRoutes.about,
+    label: "About",
+  },
+  {
+    href: appRoutes.programs,
     label: "Programs",
   },
   {
-    href: "#Service",
-    label: "Service",
+    href: appRoutes.Outcomes,
+    label: " Outcomes",
   },
-  {
-    href: "#faq",
-    label: "FAQ",
-  },
+
 ];
 
 export const Navbar = () => {
@@ -47,24 +50,15 @@ export const Navbar = () => {
       <NavigationMenu className="mx-auto">
         <NavigationMenuList className="container h-14 px-4 w-screen flex justify-between ">
           <NavigationMenuItem className="font-bold flex">
-            <a
-              rel="noreferrer noopener"
-              href="/"
-              className="ml-2 font-bold text-xl flex"
-            >
+            <Link to={appRoutes.home} className="ml-2 font-bold text-xl flex">
               <LogoIcon />
               DMIF
-            </a>
+            </Link>
           </NavigationMenuItem>
 
           {/* mobile */}
           <span className="flex md:hidden">
-
-
-            <Sheet
-              open={isOpen}
-              onOpenChange={setIsOpen}
-            >
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger className="px-2">
                 <Menu
                   className="flex md:hidden h-5 w-5"
@@ -76,23 +70,19 @@ export const Navbar = () => {
 
               <SheetContent side={"left"}>
                 <SheetHeader>
-                  <SheetTitle className="font-bold text-xl">
-                    DMIF
-                  </SheetTitle>
+                  <SheetTitle className="font-bold text-xl">DMIF</SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-col justify-center items-center gap-2 mt-4">
                   {routeList.map(({ href, label }: RouteProps) => (
-                    <a
-                      rel="noreferrer noopener"
+                    <Link
                       key={label}
-                      href={href}
+                      to={href}
                       onClick={() => setIsOpen(false)}
                       className={buttonVariants({ variant: "ghost" })}
                     >
                       {label}
-                    </a>
+                    </Link>
                   ))}
-                 
                 </nav>
               </SheetContent>
             </Sheet>
@@ -101,28 +91,25 @@ export const Navbar = () => {
           {/* desktop */}
           <nav className="hidden md:flex gap-2">
             {routeList.map((route: RouteProps, i) => (
-              <a
-                rel="noreferrer noopener"
-                href={route.href}
+              <Link
+                to={route.href}
                 key={i}
-                className={`text-[17px] ${buttonVariants({
-                  variant: "ghost",
-                })}`}
+                className={`text-[17px] ${buttonVariants({ variant: "ghost" })}`}
               >
                 {route.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
           <div className="hidden md:flex gap-2">
-    <a
-  href="#Contact"
-  className={`border ${buttonVariants({ variant: "secondary" })} cursor-pointer hover:scale-110 duration-300 transform`}
->
-  Apply Now
-</a>
-
-
+            <Link
+              to="#Contact"
+              className={`border ${buttonVariants({
+                variant: "secondary",
+              })} cursor-pointer hover:scale-110 duration-300 transform`}
+            >
+              Apply Now
+            </Link>
           </div>
         </NavigationMenuList>
       </NavigationMenu>
