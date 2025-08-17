@@ -160,7 +160,7 @@ const BenefitCard: React.FC<BenefitCardProps> = ({ benefit }) => (
 
   return (
     <div className="min-h-screen bg-black">
-      <div className=" px-20 py-16">
+      <div className=" md:px-20  px-5 py-16">
         {/* Header */}
         {/* <div className="text-center mb-20">
           <div className="inline-flex items-center space-x-2 bg-green-500/20 text-green-500 px-4 py-2 rounded-full text-sm font-medium mb-6 border border-green-500/30">
@@ -302,7 +302,7 @@ const BenefitCard: React.FC<BenefitCardProps> = ({ benefit }) => (
             Join thousands of students who have accelerated their careers through research excellence and global recognition.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button  onClick={()=>handleFooterNavClick("#Contact")} className="bg-green-500 text-black hover:bg-green-400 px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg shadow-green-500/30">
+            <Button  onClick={()=>handleFooterNavClick("#Contact")} className="bg-green-500 text-white hover:bg-green-400 px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg shadow-green-500/30">
               Start Your Journey
               <ChevronRight className="w-5 h-5 ml-2" />
             </Button>
