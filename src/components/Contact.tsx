@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, Phone, Globe, Send, User, MessageSquare } from "lucide-react";
+import { Mail, Globe, Send, User, MessageSquare } from "lucide-react";
 import { motion } from "framer-motion";
 
 type FormDataKeys = "firstname" | "lastname" | "email" | "Contact" | "message";
@@ -14,7 +14,6 @@ interface FormDataType {
 
 export function ContactDark({
   description = "We are available for questions, feedback, or collaboration opportunities. Let us know how we can help!",
-  phone = "+91-9994326696",
   email = "reach@drmadhan.in",
   web = { label: "www.drmadhan.in", url: "https://mywebsite.com" },
 }) {
@@ -57,7 +56,7 @@ export function ContactDark({
   const handleBlur = () => setFocusedField(null);
 
   const contactItems = [
-    { icon: Phone, label: "Phone", value: phone, href: `tel:${phone}` },
+
     { icon: Mail, label: "Email", value: email, href: `mailto:${email}` },
     { icon: Globe, label: "Website", value: web.label, href: web.url },
   ];

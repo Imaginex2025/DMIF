@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import cubeLeg from "/patent.avif";
 import cubeAlt from "/Research.webp"; // Example alt images
+// import patent from "/Patent-tech.jpg"
 
 interface ServiceProps {
   title: string;

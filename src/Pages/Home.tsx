@@ -26,6 +26,7 @@ const Home = () => {
 </div>
       <Cta />
       <Testimonials />
+
       <ContactDark/>
       <FAQ />
       <ScrollToTop />

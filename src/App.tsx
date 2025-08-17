@@ -6,8 +6,10 @@ import "./index.css"
 import AboutDMIF from "./Pages/About"
 import Layout from "./Layout"
 import Program from "./Pages/Program"
+import EnhancedOutcomes from "./Pages/Outcomes"
+import { ScrollToTop } from "./utils/utils"
 
-const Outcomes = () => <h1> Outcomes Page</h1>
+
 const WhyItMatters = () => <h1>Why It Matters Page</h1>
 
 function App() {
@@ -15,12 +17,12 @@ function App() {
   return (
 
     <Layout>
-
+      <ScrollToTop/>
       <Routes>
         <Route path={appRoutes.home} element={<Home />} />
         <Route path={appRoutes.about} element={<AboutDMIF/>} />
         <Route path={appRoutes.programs} element={<Program/>} />
-        <Route path={appRoutes.Outcomes} element={<Outcomes />} />
+        <Route path={appRoutes.Outcomes} element={<EnhancedOutcomes/>} />
         <Route path={appRoutes.whyItMatters} element={<WhyItMatters />} />
 <Route 
   path="/*" 

@@ -10,10 +10,28 @@ import {
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import OurProgram from "@/components/OurProgram";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Program = () => {
   const ref = useRef(null);
+const navigate = useNavigate();
+  const location = useLocation();
 
+
+    const handleFooterNavClick = (href: string) => {
+    if (href === "#Contact") {
+      if (location.pathname !== "/") {
+        navigate("/");
+        setTimeout(() => {
+          const targetElement = document.querySelector("#Contact");
+          targetElement?.scrollIntoView({ behavior: "smooth" });
+        }, 200);
+      } else {
+        const targetElement = document.querySelector("#Contact");
+        targetElement?.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
   return (
     <div className="min-h-screen  text-white">
       {/* OurProgram Section */}
@@ -22,7 +40,7 @@ const Program = () => {
           <OurProgram />
         </div>
       </section>
-<div className="container mx-auto px-4 sm:px-6 max-w-6xl relative z-10">
+<div className="container  px-4 sm:px-6  relative z-10">
   {/* Section Header - Patents */}
   <motion.div
     initial={{ opacity: 0, y: 30 }}
@@ -34,7 +52,7 @@ const Program = () => {
     <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
       Patents – The Innovation Engine
     </h2>
-    <div className="w-24 h-1 bg-emerald-500 mx-auto rounded-full"></div>
+    <div className="w-24 h-1 bg-green-500 mx-auto rounded-full"></div>
     <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-sm sm:text-base">
       Choose your path — protect ideas or publish research.
     </p>
@@ -51,18 +69,18 @@ const Program = () => {
     {/* Who It's For */}
     <motion.div
       whileHover={{ scale: 1.02 }}
-      className="bg-card backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-emerald-500/30 transition-all duration-300"
+      className="bg-card backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-green-500/30 transition-all duration-300"
     >
       <div className="flex items-center gap-4 mb-6">
-        <div className="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center">
-          <Target className="w-6 h-6 text-emerald-400" />
+        <div className="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center">
+          <Target className="w-6 h-6 text-green-400" />
         </div>
-        <h3 className="text-2xl md:text-3xl font-bold text-emerald-400">Who It's For</h3>
+        <h3 className="text-2xl md:text-3xl font-bold text-green-400">Who It's For</h3>
       </div>
       <p className="text-gray-300 text-lg leading-relaxed">
         Inventors & innovators turning ideas into protected IP.
       </p>
-      <div className="flex items-center gap-2 text-emerald-400 font-medium mt-6 text-sm sm:text-base">
+      <div className="flex items-center gap-2 text-green-400 font-medium mt-6 text-sm sm:text-base">
         <Users className="w-4 h-4" />
         <span>Join 500+ Innovators</span>
       </div>
@@ -71,13 +89,13 @@ const Program = () => {
     {/* What You'll Learn */}
     <motion.div
       whileHover={{ scale: 1.02 }}
-      className="bg-card backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-blue-500/30 transition-all duration-300"
+      className="bg-card backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-green-500/30 transition-all duration-300"
     >
       <div className="flex items-center gap-4 mb-6">
-        <div className="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center">
-          <BookOpen className="w-6 h-6 text-blue-400" />
+        <div className="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center">
+          <BookOpen className="w-6 h-6 text-green-400" />
         </div>
-        <h3 className="text-2xl md:text-3xl font-bold text-blue-400">What You'll Learn</h3>
+        <h3 className="text-2xl md:text-3xl font-bold text-green-400">What You'll Learn</h3>
       </div>
       <ul className="space-y-3 sm:space-y-4">
         {[
@@ -92,7 +110,7 @@ const Program = () => {
             whileHover={{ x: 5 }}
             transition={{ duration: 0.2 }}
           >
-            <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0" />
+            <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
             <span className="text-gray-300 text-base sm:text-lg">{item}</span>
           </motion.li>
         ))}
@@ -102,13 +120,13 @@ const Program = () => {
     {/* Deliverables */}
     <motion.div
       whileHover={{ scale: 1.02 }}
-      className="bg-card backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-purple-500/30 transition-all duration-300"
+      className="bg-card backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-green-500/30 transition-all duration-300"
     >
       <div className="flex items-center gap-4 mb-6">
-        <div className="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center">
-          <Award className="w-6 h-6 text-purple-400" />
+        <div className="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center">
+          <Award className="w-6 h-6 text-green-400" />
         </div>
-        <h3 className="text-2xl md:text-3xl font-bold text-purple-400">Deliverables</h3>
+        <h3 className="text-2xl md:text-3xl font-bold text-green-400">Deliverables</h3>
       </div>
       <ul className="space-y-3 sm:space-y-4">
         {[
@@ -123,7 +141,7 @@ const Program = () => {
             whileHover={{ x: 5 }}
             transition={{ duration: 0.2 }}
           >
-            <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0" />
+            <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
             <span className="text-gray-300 text-base sm:text-lg">{item}</span>
           </motion.li>
         ))}
@@ -142,7 +160,7 @@ const Program = () => {
     <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
       Research – The Scholarly Explorer
     </h2>
-    <div className="w-24 h-1 bg-emerald-500 mx-auto rounded-full"></div>
+    <div className="w-24 h-1 bg-green-500 mx-auto rounded-full"></div>
     <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-sm sm:text-base">
       Choose your path — publish or protect.
     </p>
@@ -159,13 +177,13 @@ const Program = () => {
     {/* Who It's For - Research */}
     <motion.div
       whileHover={{ scale: 1.02 }}
-      className="bg-card backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-amber-500/30 transition-all duration-300"
+      className="bg-card backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-green-500/30 transition-all duration-300"
     >
       <div className="flex items-center gap-4 mb-6">
-        <div className="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center">
-          <Target className="w-6 h-6 text-amber-400" />
+        <div className="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center">
+          <Target className="w-6 h-6 text-green-400" />
         </div>
-        <h3 className="text-2xl md:text-3xl font-bold text-amber-400">Who It's For</h3>
+        <h3 className="text-2xl md:text-3xl font-bold text-green-400">Who It's For</h3>
       </div>
       <p className="text-gray-300 text-lg leading-relaxed">
         Students passionate about research, data, and academic writing.
@@ -175,13 +193,13 @@ const Program = () => {
     {/* What You'll Learn - Research */}
     <motion.div
       whileHover={{ scale: 1.02 }}
-      className="bg-card backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-blue-500/30 transition-all duration-300"
+      className="bg-card backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-green-500/30 transition-all duration-300"
     >
       <div className="flex items-center gap-4 mb-6">
-        <div className="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center">
-          <BookOpen className="w-6 h-6 text-blue-400" />
+        <div className="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center">
+          <BookOpen className="w-6 h-6 text-green-400" />
         </div>
-        <h3 className="text-2xl md:text-3xl font-bold text-blue-400">What You'll Learn</h3>
+        <h3 className="text-2xl md:text-3xl font-bold text-green-400">What You'll Learn</h3>
       </div>
       <ul className="space-y-3 sm:space-y-4">
         {[
@@ -196,7 +214,7 @@ const Program = () => {
             whileHover={{ x: 5 }}
             transition={{ duration: 0.2 }}
           >
-            <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0" />
+            <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
             <span className="text-gray-300 text-base sm:text-lg">{item}</span>
           </motion.li>
         ))}
@@ -206,13 +224,13 @@ const Program = () => {
     {/* Deliverables - Research */}
     <motion.div
       whileHover={{ scale: 1.02 }}
-      className="bg-card backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-purple-500/30 transition-all duration-300"
+      className="bg-card backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-green-500/30 transition-all duration-300"
     >
       <div className="flex items-center gap-4 mb-6">
-        <div className="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center">
-          <Award className="w-6 h-6 text-purple-400" />
+        <div className="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center">
+          <Award className="w-6 h-6 text-green-400" />
         </div>
-        <h3 className="text-2xl md:text-3xl font-bold text-purple-400">Deliverables</h3>
+        <h3 className="text-2xl md:text-3xl font-bold text-green-400">Deliverables</h3>
       </div>
       <ul className="space-y-3 sm:space-y-4">
         {[
@@ -227,7 +245,7 @@ const Program = () => {
             whileHover={{ x: 5 }}
             transition={{ duration: 0.2 }}
           >
-            <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0" />
+            <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
             <span className="text-gray-300 text-base sm:text-lg">{item}</span>
           </motion.li>
         ))}
@@ -248,13 +266,13 @@ const Program = () => {
       Turn your innovation into protected intellectual property.
     </p>
     <motion.a
-      href="#apply"
+      onClick={()=>handleFooterNavClick("#Contact")}
       whileHover={{
         scale: 1.05,
         boxShadow: "0 20px 40px rgba(16, 185, 129, 0.3)",
       }}
       whileTap={{ scale: 0.95 }}
-      className="inline-flex items-center gap-3 bg-emerald-500 text-white px-8 py-4 sm:px-10 sm:py-5 rounded-2xl text-lg font-semibold shadow-lg hover:bg-emerald-400 transition-all duration-300 group"
+      className="inline-flex items-center gap-3 bg-green-500 text-white px-8 py-4 sm:px-10 sm:py-5 rounded-2xl text-lg font-semibold shadow-lg hover:bg-green-400 transition-all duration-300 group"
     >
       <Zap className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
       Apply for Patent Track
@@ -281,7 +299,7 @@ const Program = () => {
         whileHover={{ y: -5 }}
         transition={{ duration: 0.3 }}
       >
-        <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-emerald-400 mb-1 sm:mb-2">
+        <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-400 mb-1 sm:mb-2">
           {stat.number}
         </div>
         <div className="text-gray-400 text-xs sm:text-sm md:text-base">

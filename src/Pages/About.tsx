@@ -12,6 +12,7 @@ import {
 //   Building,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function AboutDMIF() {
   const [hoveredCard, setHoveredCard] = useState(null);
@@ -103,6 +104,25 @@ export default function AboutDMIF() {
 
   const closeVideo = () => {
     setActiveVideo(null);
+  };
+
+    const navigate = useNavigate();
+  const location = useLocation();
+
+
+    const handleFooterNavClick = (href: string) => {
+    if (href === "#Contact") {
+      if (location.pathname !== "/") {
+        navigate("/");
+        setTimeout(() => {
+          const targetElement = document.querySelector("#Contact");
+          targetElement?.scrollIntoView({ behavior: "smooth" });
+        }, 200);
+      } else {
+        const targetElement = document.querySelector("#Contact");
+        targetElement?.scrollIntoView({ behavior: "smooth" });
+      }
+    }
   };
 
   return (
@@ -273,7 +293,7 @@ export default function AboutDMIF() {
         >
           <div className="absolute inset-0 bg-gradient-to-br from-green-400/20 to-transparent rounded-2xl blur-xl"></div>
           <motion.img
-            src="/patent.avif"
+            src="/ABout-Section.jpg"
             alt="Vision of DMIF"
             className="relative rounded-2xl shadow-2xl w-full border border-green-800/30"
             initial={{ opacity: 0, scale: 0.95 }}
@@ -724,6 +744,7 @@ export default function AboutDMIF() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={()=>handleFooterNavClick("#Contact")}
               className="bg-green-400 text-black px-8 py-3 rounded-xl font-semibold hover:bg-green-300 transition-all duration-300 shadow-lg hover:shadow-green-400/30"
             >
               Join Our Community

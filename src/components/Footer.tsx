@@ -1,5 +1,7 @@
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { LogoIcon } from "./Icons";
 import { buttonVariants } from "./ui/button";
+import { appRoutes } from "../Routes/route";
 
 interface RouteProps {
   href: string;
@@ -7,58 +9,82 @@ interface RouteProps {
 }
 
 const routeList: RouteProps[] = [
-  { href: "#Home", label: "Home" },
-  { href: "#Programs", label: "Programs" },
-  { href: "#Service", label: "Service" },
-  { href: "#faq", label: "FAQ" },
-  { href: "#Contact", label: "Contact" },
+  { href: appRoutes.home, label: "Home" },
+  { href: appRoutes.programs, label: "Programs" },
+  { href: appRoutes.about, label: "About" },
+  { href: appRoutes.Outcomes, label: "Outcomes" },
+  { href: "#Contact", label: "Contact" }, // Special case
 ];
 
 export const Footer = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const handleFooterNavClick = (href: string) => {
-    const targetElement = document.querySelector(href);
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: "smooth" });
+    if (href === "#Contact") {
+      // Always navigate to home first
+      if (location.pathname !== "/") {
+        navigate("/");
+        // Delay scroll until route changes
+        setTimeout(() => {
+          const targetElement = document.querySelector("#Contact");
+          targetElement?.scrollIntoView({ behavior: "smooth" });
+        }, 200);
+      } else {
+        // Already on home → just scroll
+        const targetElement = document.querySelector("#Contact");
+        targetElement?.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 
   return (
     <footer className="text-white border-t border-[#2E2132] text-xs sm:text-sm">
       <div className="flex flex-col md:flex-row justify-between gap-10 px-5 sm:px-20 py-10">
-        {/* Left - Logo & Description */}
+        {/* Left - Logo */}
         <div className="flex-1 flex flex-col items-start">
-          <a
-            href="/"
+          <Link
+            to={appRoutes.home}
             className="font-bold text-2xl flex items-center gap-2 mb-4"
           >
             <LogoIcon />
             DMIF
-          </a>
+          </Link>
           <p className="mt-2 text-gray-400 max-w-xs">
             DMIF provides digital media solutions to help businesses grow online
             with innovative technology and expert support.
           </p>
         </div>
 
-        {/* Center - Navigation */}
+        {/* Center - Nav */}
         <div className="flex-1">
           <ul className="flex flex-col md:items-center">
             {routeList.map(({ href, label }) => (
               <li key={label}>
-                <button
-                  onClick={() => handleFooterNavClick(href)}
-                  className={`${buttonVariants({
-                    variant: "ghost",
-                  })} bg-transparent p-0 text-left text-white hover:text-green-400 transition-colors duration-200`}
-                >
-                  {label}
-                </button>
+                {href === "#Contact" ? (
+                  <button
+                    onClick={() => handleFooterNavClick(href)}
+                    className={`${buttonVariants({
+                      variant: "ghost",
+                    })} bg-transparent p-0 text-left text-white hover:text-green-400 transition-colors duration-200`}
+                  >
+                    {label}
+                  </button>
+                ) : (
+                  <Link
+                    to={href}
+                    className={`${buttonVariants({
+                      variant: "ghost",
+                    })} bg-transparent p-0 text-left text-white hover:text-green-400 transition-colors duration-200`}
+                  >
+                    {label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
         </div>
 
-        {/* Right - Contact Info */}
         {/* Right - Contact Info */}
         <div className="flex-1 text-sm leading-relaxed md:items-end md:text-right space-y-2">
           <p>

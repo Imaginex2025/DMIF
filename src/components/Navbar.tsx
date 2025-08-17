@@ -15,8 +15,8 @@ import {
 import { buttonVariants } from "./ui/button";
 import { Menu } from "lucide-react";
 import { LogoIcon } from "./Icons";
-import { Link } from "react-router-dom"; // ✅ Import Link
-import { appRoutes } from "../Routes/route"; // ✅ Assuming you export your route paths here
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { appRoutes } from "../Routes/route";
 
 interface RouteProps {
   href: string;
@@ -24,56 +24,60 @@ interface RouteProps {
 }
 
 const routeList: RouteProps[] = [
-  {
-    href: appRoutes.home,
-    label: "Home",
-  },
-  {
-    href: appRoutes.about,
-    label: "About",
-  },
-  {
-    href: appRoutes.programs,
-    label: "Programs",
-  },
-  {
-    href: appRoutes.Outcomes,
-    label: " Outcomes",
-  },
-
+  { href: appRoutes.home, label: "Home" },
+  { href: appRoutes.about, label: "About" },
+  { href: appRoutes.programs, label: "Programs" },
+  { href: appRoutes.Outcomes, label: "Outcomes" },
 ];
 
 export const Navbar = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const handleFooterNavClick = (href: string) => {
+    if (href === "#Contact") {
+      if (location.pathname !== "/") {
+        navigate("/");
+        setTimeout(() => {
+          const targetElement = document.querySelector("#Contact");
+          targetElement?.scrollIntoView({ behavior: "smooth" });
+        }, 200);
+      } else {
+        const targetElement = document.querySelector("#Contact");
+        targetElement?.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   return (
-    <header className="sticky border-b-[1px] top-0 z-40 w-full bg-white dark:border-b-slate-700 dark:bg-background">
+    <header className="sticky top-0 z-40 w-full border-b bg-white dark:border-b-slate-700 dark:bg-background">
       <NavigationMenu className="mx-auto">
-        <NavigationMenuList className="container h-14 px-4 w-screen flex justify-between ">
-          <NavigationMenuItem className="font-bold flex">
-            <Link to={appRoutes.home} className="ml-2 font-bold text-xl flex">
+        <NavigationMenuList className="container flex h-14 w-screen justify-between px-4">
+          {/* Logo */}
+          <NavigationMenuItem className="flex font-bold">
+            <Link to={appRoutes.home} className="flex text-xl font-bold ml-2">
               <LogoIcon />
               DMIF
             </Link>
           </NavigationMenuItem>
 
-          {/* mobile */}
+          {/* Mobile */}
           <span className="flex md:hidden">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger className="px-2">
                 <Menu
-                  className="flex md:hidden h-5 w-5"
+                  className="h-5 w-5 md:hidden"
                   onClick={() => setIsOpen(true)}
-                >
-                  <span className="sr-only">Menu Icon</span>
-                </Menu>
+                />
               </SheetTrigger>
 
-              <SheetContent side={"left"}>
+              <SheetContent side="left">
                 <SheetHeader>
-                  <SheetTitle className="font-bold text-xl">DMIF</SheetTitle>
+                  <SheetTitle className="text-xl font-bold">DMIF</SheetTitle>
                 </SheetHeader>
-                <nav className="flex flex-col justify-center items-center gap-2 mt-4">
-                  {routeList.map(({ href, label }: RouteProps) => (
+                <nav className="mt-4 flex flex-col items-center justify-center gap-2">
+                  {routeList.map(({ href, label }) => (
                     <Link
                       key={label}
                       to={href}
@@ -88,9 +92,9 @@ export const Navbar = () => {
             </Sheet>
           </span>
 
-          {/* desktop */}
-          <nav className="hidden md:flex gap-2">
-            {routeList.map((route: RouteProps, i) => (
+          {/* Desktop */}
+          <nav className="hidden gap-2 md:flex">
+            {routeList.map((route, i) => (
               <Link
                 to={route.href}
                 key={i}
@@ -101,15 +105,16 @@ export const Navbar = () => {
             ))}
           </nav>
 
-          <div className="hidden md:flex gap-2">
-            <Link
-              to="#Contact"
+          {/* Apply Now Button */}
+          <div className="hidden gap-2 md:flex">
+            <button
+              onClick={() => handleFooterNavClick("#Contact")}
               className={`border ${buttonVariants({
                 variant: "secondary",
-              })} cursor-pointer hover:scale-110 duration-300 transform`}
+              })} cursor-pointer transform duration-300 hover:scale-110`}
             >
               Apply Now
-            </Link>
+            </button>
           </div>
         </NavigationMenuList>
       </NavigationMenu>

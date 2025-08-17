@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/card";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
+import { Sponsors } from './Sponsors';
 
 interface TestimonialProps {
   image: string;
@@ -206,6 +207,7 @@ export const Testimonials = () => {
           </motion.div>
         )}
       </AnimatePresence>
+            <Sponsors/>
     </section>
   );
 };

@@ -1,58 +1,60 @@
-import { Radar } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface SponsorProps {
-  icon: JSX.Element;
+  img: string;
   name: string;
 }
 
 const sponsors: SponsorProps[] = [
-  {
-    icon: <Radar size={34} />,
-    name: "Sponsor 1",
-  },
-  {
-    icon: <Radar size={34} />,
-    name: "Sponsor 2",
-  },
-  {
-    icon: <Radar size={34} />,
-    name: "Sponsor 3",
-  },
-  {
-    icon: <Radar size={34} />,
-    name: "Sponsor 4",
-  },
-  {
-    icon: <Radar size={34} />,
-    name: "Sponsor 5",
-  },
-  {
-    icon: <Radar size={34} />,
-    name: "Sponsor 6",
-  },
+  { img: "/Companies/Accenture-Logo.png", name: "Accenture" },
+  { img: "/Companies/californmia.png", name: "University of California" },
+  { img: "/Companies/wells_fargo.png", name: "Wells Fargo" },
+  { img: "/Companies/Zensar.png", name: "Zensar" },
+    { img: "/Companies/Accenture-Logo.png", name: "Accenture" },
+  { img: "/Companies/californmia.png", name: "University of California" },
+  { img: "/Companies/wells_fargo.png", name: "Wells Fargo" },
+  { img: "/Companies/Zensar.png", name: "Zensar" },
+    { img: "/Companies/Accenture-Logo.png", name: "Accenture" },
+  { img: "/Companies/californmia.png", name: "University of California" },
+  { img: "/Companies/wells_fargo.png", name: "Wells Fargo" },
+  { img: "/Companies/Zensar.png", name: "Zensar" },
+    { img: "/Companies/Accenture-Logo.png", name: "Accenture" },
+  { img: "/Companies/californmia.png", name: "University of California" },
+  { img: "/Companies/wells_fargo.png", name: "Wells Fargo" },
+  { img: "/Companies/Zensar.png", name: "Zensar" },
+  
+  // { img: "/sponsors/sponsor5.png", name: "Sponsor 5" },
+  // { img: "/sponsors/sponsor6.png", name: "Sponsor 6" },
 ];
+
+// Duplicate sponsors for infinite loop
+const sponsorLoop = [...sponsors, ...sponsors];
 
 export const Sponsors = () => {
   return (
-    <section
-      id="sponsors"
-      className="container pt-24 sm:py-32"
-    >
-      <h2 className="text-center text-md lg:text-xl font-bold mb-8 text-primary">
-        Investors and founders
-      </h2>
-
-      <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8">
-        {sponsors.map(({ icon, name }: SponsorProps) => (
+    <section id="sponsors" className="container py-10 overflow-hidden">
+      <motion.div
+        className="flex gap-10"
+        animate={{ x: ["0%", "-50%"] }}
+        transition={{
+          repeat: Infinity,
+          duration: 15,
+          ease: "linear",
+        }}
+      >
+        {sponsorLoop.map(({ img, name }, i) => (
           <div
-            key={name}
-            className="flex items-center gap-1 text-muted-foreground/60"
+            key={i}
+            className="flex items-center gap-2 min-w-[180px] justify-center"
           >
-            <span>{icon}</span>
-            <h3 className="text-xl  font-bold">{name}</h3>
+            <img
+              src={img}
+              alt={name}
+              className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition"
+            />
           </div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };
