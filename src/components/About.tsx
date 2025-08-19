@@ -17,9 +17,9 @@ export const About = () => {
 
   const stats: StatsProps[] = [
     { quantity: "120+", description: "Patents Filled" },
-    { quantity: "95", description: "Grants" },
+    { quantity: "95+", description: "Grants" },
     { quantity: "6", description: "Startup Launched" },
-    { quantity: "23", description: "Years Experience" },
+    { quantity: "22+", description: "Years Experience" },
   ];
 
   const features: FeatureProps[] = [
@@ -116,7 +116,7 @@ export const About = () => {
                 </span>
                 {/* Full version for tablets and up */}
                 <span className="hidden sm:block">
-                  Dr. Madhan brings over 15 years of expertise in innovation and entrepreneurship, having mentored hundreds of students from ideation through to implementation. His work focuses on turning ideas into action, enabling aspiring innovators to build real-world solutions from academic concepts. Through his unique methodology, he transforms theoretical knowledge into practical applications, often culminating in intellectual property and startup ventures. Dr. Madhan’s approach bridges the gap between academic learning and entrepreneurial execution, equipping students not only with technical skills but also with the mindset and tools to thrive in the innovation ecosystem. His guidance has led to the successful launch of numerous student-led initiatives and startups, making him a trusted mentor in the innovation space. By blending structured mentorship with hands-on experience, he empowers the next generation of thinkers, doers, and changemakers to convert their potential into tangible impact. His mission is clear: to shape futures through innovation-driven education.
+Dr. Madhan Kumar Srinivasan, an IIM-Calcutta alumnus, 3x TEDx Speaker & Accenture Prolific Inventor (Title-of-Honor given by Accenture), is a Serial Entrepreneur of 6 companies and an Inventor of 127 Patents & 96 Grants that are Commercially Successful Products in the US, UK, Germany, France, Ireland, Australia, Singapore & India. He has built a multi-million-dollar business from scratch and served 300+ international clients worldwide, including many Fortune 500 companies, resulting in $100+ million in cost savings annually. He was an invited speaker at Davos, Switzerland, during the 2024 World Economic Forum Annual Meeting. He is the Founder & Creator of Accenture's Cloud AI capabilities/business line. Developed and deployed the 1st Cloud AI product in the Accenture Cloud Platform, ACP, the flagship cloud product of Accenture. He is a pioneer and part of India’s Cloud Success Story, who built the first private cloud in India at Infosys in 2012
                 </span>
               </motion.p>
             </div>

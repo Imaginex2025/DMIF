@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import cubeLeg from "/patent.avif";
 import cubeAlt from "/Research.webp"; // Example alt images
-// import patent from "/Patent-tech.jpg"
+import patent from "/start-up.jpg"
 
 interface ServiceProps {
   title: string;
@@ -32,7 +32,7 @@ const serviceList: ServiceProps[] = [
     title: "Startup Support",
     description: "Launch your venture with IP foundation and mentorship",
     icon: <MagnifierIcon />,
-    image: cubeLeg,
+    image: patent,
   },
 ];
 

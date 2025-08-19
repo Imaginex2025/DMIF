@@ -77,30 +77,45 @@ export default function AboutDMIF() {
 //     },
 //   ];
 
-  const tedxVideos = [
-    {
-      id: "dQw4w9WgXcQ",
-      title: "Innovation Through Mentorship",
-      description: "How mentorship transforms raw ideas into  innovations",
-      thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
-    },
-    {
-      id: "dQw4w9WgXcQ",
-      title: "The Future of Patent-Based Learning",
-      description: "Building intellectual property through education",
-      thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
-    },
-    {
-      id: "dQw4w9WgXcQ",
-      title: "From Student to Entrepreneur",
-      description: "The journey of creating value through innovation",
-      thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
-    },
-  ];
 
-  const openVideo = (videoId: any) => {
-    setActiveVideo(videoId);
+const getYoutubeId = (url: string) => {
+  const regExp =
+    /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|watch\?.+&v=)([^#&?]*).*/;
+  const match = url.match(regExp);
+  return match && match[2].length === 11 ? match[2] : null;
+};
+
+const tedxVideos = [
+  {
+    url: "https://youtu.be/DkrYRX-a3O4?si=HCvcSnxt1Nl2dzOs",
+    title: "Innovation Through Mentorship",
+    description: "How mentorship transforms raw ideas into innovations",
+  },
+  {
+    url: "https://youtu.be/SzyDXeqrMrQ?si=uS70V3q3z_xzGUF8",
+    title: "The Future of Patent-Based Learning",
+    description: "Building intellectual property through education",
+  },
+  {
+    url: "https://www.youtube.com/watch?v=ltt8iBBJXpI",
+    title: "From Student to Entrepreneur",
+    description: "The journey of creating value through innovation",
+  },
+].map((video) => {
+  const id = getYoutubeId(video.url)!;
+  return {
+    id,
+    ...video,
+    thumbnail: `https://img.youtube.com/vi/${id}/maxresdefault.jpg`,
   };
+});
+
+const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+
+const openVideo = (id: string) => {
+  setSelectedVideo(id);
+};
+
 
   const closeVideo = () => {
     setActiveVideo(null);
@@ -586,12 +601,12 @@ export default function AboutDMIF() {
                 className="bg-gray-900/50 border-green-800/30 text-white backdrop-blur-sm transition-all duration-300 hover:border-green-400/50 hover:shadow-2xl hover:shadow-green-400/10 overflow-hidden"
                 onClick={() => openVideo(video.id)}
               >
-                <div className="relative">
-                  <img
-                    src={video.thumbnail}
-                    alt={video.title}
-                    className="w-full h-48 object-cover"
-                  />
+                 <div className="relative">
+    <img
+      src={video.thumbnail}
+      alt={video.title}
+      className="w-full h-48 object-cover"
+    />
                   <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
                     <div className="bg-red-600 rounded-full p-4">
                       <Play className="w-8 h-8 text-white fill-current" />
@@ -615,31 +630,25 @@ export default function AboutDMIF() {
         </div>
       </section>
 
-      {/* Video Modal */}
-      {activeVideo && (
-        <div
-          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
-          onClick={closeVideo}
-        >
-          <div
-            className="relative w-full max-w-4xl aspect-video"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={closeVideo}
-              className="absolute -top-10 right-0 text-white hover:text-red-400 transition-colors"
-            >
-              <span className="text-2xl">×</span>
-            </button>
-            <iframe
-              src={`https://www.youtube.com/embed/${activeVideo}?autoplay=1`}
-              className="w-full h-full rounded-xl"
-              allowFullScreen
-              title="TEDx Video"
-            />
-          </div>
-        </div>
-      )}
+{selectedVideo && (
+  <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
+    <div className="relative w-full max-w-3xl aspect-video">
+      <iframe
+        src={`https://www.youtube.com/embed/${selectedVideo}?autoplay=1`}
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        className="w-full h-full rounded-xl"
+      />
+      <button
+        onClick={() => setSelectedVideo(null)}
+        className="absolute top-2 right-2 bg-red-600 text-white px-3 py-1 rounded-full"
+      >
+        ✕
+      </button>
+    </div>
+  </div>
+)}
 
       {/* Enhanced Partners Section */}
       {/* <section className="container py-10 text-center">

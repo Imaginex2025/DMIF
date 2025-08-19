@@ -50,7 +50,7 @@ export const Navbar = () => {
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b bg-white dark:border-b-slate-700 dark:bg-background">
+    <header className="sticky top-0 z-40 w-full border-b bg-white">
       <NavigationMenu className="mx-auto">
         <NavigationMenuList className="container flex h-14 w-screen justify-between px-4">
           {/* Logo */}
@@ -70,7 +70,7 @@ export const Navbar = () => {
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger className="px-2">
                 <Menu
-                  className="h-5 w-5 md:hidden"
+                  className="h-5 w-5 text-black md:hidden "
                   onClick={() => setIsOpen(true)}
                 />
               </SheetTrigger>
@@ -79,7 +79,7 @@ export const Navbar = () => {
                 <SheetHeader>
                   <SheetTitle className="text-xl font-bold">DMIF</SheetTitle>
                 </SheetHeader>
-                <nav className="mt-4 flex flex-col items-center justify-center gap-2">
+                <nav className="mt-4 flex flex-col items-center  justify-center gap-2">
                   {routeList.map(({ href, label }) => (
                     <Link
                       key={label}
@@ -101,7 +101,7 @@ export const Navbar = () => {
               <Link
                 to={route.href}
                 key={i}
-                className={`text-[17px] ${buttonVariants({ variant: "ghost" })}`}
+                className={`text-[17px] text-black ${buttonVariants({ variant: "ghost" })}`}
               >
                 {route.label}
               </Link>
@@ -109,16 +109,17 @@ export const Navbar = () => {
           </nav>
 
           {/* Apply Now Button */}
-          <div className="hidden gap-2 md:flex">
-            <button
-              onClick={() => handleFooterNavClick("#Contact")}
-              className={`border ${buttonVariants({
-                variant: "secondary",
-              })} cursor-pointer transform duration-300 hover:scale-110`}
-            >
-              Apply Now
-            </button>
-          </div>
+         <div className="hidden gap-2 md:flex">
+  <button
+    onClick={() => handleFooterNavClick("#Contact")}
+    className={`border ${buttonVariants({
+      variant: "secondary",
+    })} cursor-pointer transform transition duration-300 ease-in-out hover:scale-110`}
+  >
+    Apply Now
+  </button>
+</div>
+
         </NavigationMenuList>
       </NavigationMenu>
     </header>

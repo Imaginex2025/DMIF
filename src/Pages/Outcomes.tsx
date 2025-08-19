@@ -175,45 +175,7 @@ const BenefitCard: React.FC<BenefitCardProps> = ({ benefit }) => (
           </p>
         </div> */}
 
-        {/* Indian Students Section */}
-        <section className="mb-20">
-          <div className="text-center mb-12">
-            <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-green-500/30">
-              <GraduationCap className="w-10 h-10 text-white" />
-            </div>
-            <h2 className="text-4xl font-bold text-green-500 mb-4">For Indian Students</h2>
-            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-              Accelerate your academic and career prospects with research credentials that open doors to top opportunities in India's competitive landscape.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-6">
-            {indianStudentBenefits.map((benefit, index) => (
-              <BenefitCard key={index} benefit={benefit}   />
-            ))}
-          </div>
 
-          <div className="mt-8  bg-card border border-green-500/20 rounded-2xl p-8">
-            <h3 className="text-xl font-semibold text-green-500 mb-4 flex items-center">
-              <Zap className="w-5 h-5 mr-2" />
-              Key Statistics for Indian Students
-            </h3>
-            <div className="grid md:grid-cols-3 gap-6 text-center">
-              <div>
-                <div className="text-3xl font-bold text-green-500 mb-2">85%</div>
-                <div className="text-sm text-gray-400">Higher placement packages</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-green-500 mb-2">3x</div>
-                <div className="text-sm text-gray-400">Better admission chances</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-green-500 mb-2">92%</div>
-                <div className="text-sm text-gray-400">Fellowship success rate</div>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* International Students Section */}
         <section className="mb-20">
@@ -232,7 +194,7 @@ const BenefitCard: React.FC<BenefitCardProps> = ({ benefit }) => (
               <BenefitCard key={index} benefit={benefit}   />
             ))}
           </div>
-
+{/* 
           <div className="mt-8  bg-card border border-green-500/20 rounded-2xl p-8">
             <h3 className="text-xl font-semibold text-green-500 mb-4 flex items-center">
               <Building2 className="w-5 h-5 mr-2" />
@@ -252,7 +214,48 @@ const BenefitCard: React.FC<BenefitCardProps> = ({ benefit }) => (
                 <div className="text-sm text-gray-400">SOP differentiation success</div>
               </div>
             </div>
+          </div> */}
+        </section>
+
+
+                {/* Indian Students Section */}
+        <section className="mb-20">
+          <div className="text-center mb-12">
+            <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-green-500/30">
+              <GraduationCap className="w-10 h-10 text-white" />
+            </div>
+            <h2 className="text-4xl font-bold text-green-500 mb-4">For Indian Students</h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+              Accelerate your academic and career prospects with research credentials that open doors to top opportunities in India's competitive landscape.
+            </p>
           </div>
+          
+          <div className="grid md:grid-cols-2 gap-6">
+            {indianStudentBenefits.map((benefit, index) => (
+              <BenefitCard key={index} benefit={benefit}   />
+            ))}
+          </div>
+
+          {/* <div className="mt-8  bg-card border border-green-500/20 rounded-2xl p-8">
+            <h3 className="text-xl font-semibold text-green-500 mb-4 flex items-center">
+              <Zap className="w-5 h-5 mr-2" />
+              Key Statistics for Indian Students
+            </h3>
+            <div className="grid md:grid-cols-3 gap-6 text-center">
+              <div>
+                <div className="text-3xl font-bold text-green-500 mb-2">85%</div>
+                <div className="text-sm text-gray-400">Higher placement packages</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-green-500 mb-2">3x</div>
+                <div className="text-sm text-gray-400">Better admission chances</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-green-500 mb-2">92%</div>
+                <div className="text-sm text-gray-400">Fellowship success rate</div>
+              </div>
+            </div>
+          </div> */}
         </section>
 
         {/* Global Careers Section */}
@@ -273,7 +276,7 @@ const BenefitCard: React.FC<BenefitCardProps> = ({ benefit }) => (
             ))}
           </div>
 
-          <div className="mt-8  bg-card border border-green-500/20 rounded-2xl p-8">
+          {/* <div className="mt-8  bg-card border border-green-500/20 rounded-2xl p-8">
             <h3 className="text-xl font-semibold text-green-500 mb-4 flex items-center">
               <Rocket className="w-5 h-5 mr-2" />
               Global Mobility Success
@@ -292,7 +295,7 @@ const BenefitCard: React.FC<BenefitCardProps> = ({ benefit }) => (
                 <div className="text-sm text-gray-400">Higher startup success</div>
               </div>
             </div>
-          </div>
+          </div> */}
         </section>
 
         {/* Call to Action */}

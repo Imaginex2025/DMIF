@@ -53,8 +53,7 @@ export const Footer = () => {
     />
           </Link>
           <p className="mt-2 text-gray-400 max-w-xs">
-            DMIF provides digital media solutions to help businesses grow online
-            with innovative technology and expert support.
+          At Dr. Madhan Institute of Future (DMIF), we don’t teach by instructing — we mentor by igniting curiosity, purpose, and self-drive, with the clear goal of transforming learners into inventors today and entrepreneurs tomorrow.
           </p>
         </div>
 

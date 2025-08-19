@@ -16,7 +16,7 @@ const FAQList: FAQProps[] = [
   {
     question: "What is DMIF?",
     answer:
-      "DMIF (Dr. Madhan Innovation of Future ) is an initiative to guide innovators, researchers, and entrepreneurs in transforming their ideas into patents, publications, and startups.",
+      "DMIF (Dr. Madhan Institue  of Future ) is an initiative to guide innovators, researchers, and entrepreneurs in transforming their ideas into patents, publications, and startups.",
     value: "item-1",
   },
   {

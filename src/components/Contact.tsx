@@ -2,7 +2,13 @@ import { useState } from "react";
 import { Mail, Globe, Send, User, MessageSquare } from "lucide-react";
 import { motion } from "framer-motion";
 
-type FormDataKeys = "firstname" | "lastname" | "email" | "Contact" | "message";
+type FormDataKeys =
+  | "firstname"
+  | "lastname"
+  | "email"
+  | "Contact"
+  | "message"
+  | "track";
 
 interface FormDataType {
   firstname: string;
@@ -10,6 +16,7 @@ interface FormDataType {
   email: string;
   Contact: string;
   message: string;
+  track: string;
 }
 
 export function ContactDark({
@@ -23,40 +30,65 @@ export function ContactDark({
     email: "",
     Contact: "",
     message: "",
+    track: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [focusedField, setFocusedField] = useState<FormDataKeys | null>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name as FormDataKeys]: value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  setIsSubmitting(true);
 
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+  const formDataToSend = new FormData();
+  formDataToSend.append("access_key", "2901d84b-5a50-43c2-bf60-8c8276c62725"); // replace with your Web3Forms key
+  formDataToSend.append("firstname", formData.firstname);
+  formDataToSend.append("lastname", formData.lastname);
+  formDataToSend.append("email", formData.email);
+  formDataToSend.append("Contact", formData.Contact);
+  formDataToSend.append("message", formData.message);
+  formDataToSend.append("track", formData.track);
 
-    console.log("Form submitted:", formData);
-    alert("Thanks for contacting us! We'll get back to you within 24 hours.");
-
-    setFormData({
-      firstname: "",
-      lastname: "",
-      email: "",
-      Contact: "",
-      message: "",
+  try {
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formDataToSend,
     });
-    setIsSubmitting(false);
-  };
+
+    const data = await response.json();
+
+    if (data.success) {
+      alert("✅ Form Submitted Successfully!");
+      setFormData({
+        firstname: "",
+        lastname: "",
+        email: "",
+        Contact: "",
+        message: "",
+        track: "",
+      });
+    } else {
+      alert("❌ " + data.message);
+    }
+  } catch (error) {
+    alert("Something went wrong. Please try again later.");
+    console.error(error);
+  }
+
+  setIsSubmitting(false);
+};
 
   const handleFocus = (fieldName: FormDataKeys) => setFocusedField(fieldName);
   const handleBlur = () => setFocusedField(null);
 
   const contactItems = [
-
     { icon: Mail, label: "Email", value: email, href: `mailto:${email}` },
     { icon: Globe, label: "Website", value: web.label, href: web.url },
   ];
@@ -189,6 +221,56 @@ export function ContactDark({
                 </div>
               </div>
 
+       {/* Track Dropdown */}
+<div className="space-y-2">
+  <label className="block text-sm font-medium text-gray-300">
+    Select Track
+  </label>
+  <select
+    name="track"
+    value={formData.track}
+    onChange={handleChange}
+    onFocus={() => handleFocus("track")}
+    onBlur={handleBlur}
+    required
+    className={`w-full px-4 py-3 rounded-xl cursor-pointer bg-white/5 border transition-all duration-300 text-white focus:outline-none appearance-none ${
+      focusedField === "track"
+        ? "border-green-500 ring-2 ring-green-500/20"
+        : "border-white/10 hover:border-white/20"
+    }`}
+  >
+    <option value="" disabled className="bg-gray-800 cursor-pointer text-gray-400">
+      -- Select Track --
+    </option>
+    <option
+      value="patent"
+      className={`cursor-pointer ${
+        formData.track === "patent" ? "bg-blue-600 text-white" : "bg-gray-800 text-white"
+      }`}
+    >
+      Patent Track
+    </option>
+    <option
+      value="research"
+      className={`cursor-pointer ${
+        formData.track === "research" ? "bg-blue-600 text-white" : "bg-gray-800 text-white"
+      }`}
+    >
+      Research Track
+    </option>
+    <option
+      value="both"
+      className={`cursor-pointer ${
+        formData.track === "both" ? "bg-blue-600 text-white" : "bg-gray-800 text-white"
+      }`}
+    >
+      Both
+    </option>
+  </select>
+</div>
+
+
+
               {/* Message */}
               <div className="space-y-2">
                 <label className="block text-sm font-medium text-gray-300 flex items-center gap-2">
@@ -196,14 +278,14 @@ export function ContactDark({
                   Message
                   <span className="text-red-400">*</span>
                 </label>
-                <textarea
+                <input
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   onFocus={() => handleFocus("message")}
                   onBlur={handleBlur}
                   placeholder="Tell us how we can help you..."
-                  rows={5}
+                  
                   required
                   className={`w-full px-4 py-3 rounded-xl bg-white/5 border transition-all duration-300 text-white placeholder-gray-500 focus:outline-none resize-none ${
                     focusedField === "message"
@@ -237,7 +319,8 @@ export function ContactDark({
               </button>
 
               <p className="text-xs text-gray-500 text-center pt-4 border-t border-white/10">
-                By submitting this form, you agree to our privacy policy. We'll never share your information.
+                By submitting this form, you agree to our privacy policy. We'll never share your
+                information.
               </p>
             </form>
           </div>

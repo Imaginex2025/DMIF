@@ -23,7 +23,7 @@ export const HeroCards = () => {
   return (
     <div className="hidden lg:flex flex-row flex-wrap gap-8 relative w-[700px] h-[500px]">
       {/* Testimonial Card */}
-      <motion.div
+      {/* <motion.div
         className="absolute w-[340px] -top-[15px]"
         initial="initial"
         animate="animate"
@@ -45,7 +45,7 @@ export const HeroCards = () => {
             DMIF turned my project idea into a patent-ready innovation!
           </CardContent>
         </Card>
-      </motion.div>
+      </motion.div> */}
 
       {/* Team Card (Dr. Madhan) */}
       <motion.div
@@ -89,7 +89,7 @@ export const HeroCards = () => {
 
       {/* Pricing – Patent Track */}
       <motion.div
-        className="absolute top-[170px] left-[50px] w-72"
+        className="absolute top-[70px] left-[50px] w-72"
         initial="initial"
         animate="animate"
         variants={cardVariants}

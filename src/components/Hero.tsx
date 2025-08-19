@@ -6,7 +6,10 @@ import { motion } from "framer-motion";
 
 export const Hero = () => {
   return (
-    <section id="Home" className="container grid lg:grid-cols-2 place-items-center py-20 md:py-32 gap-10 relative">
+    <section
+      id="Home"
+      className="container grid lg:grid-cols-2 place-items-center py-20 md:py-32 gap-10 relative"
+    >
       {/* Left Side - Text & Buttons */}
       <div className="text-center lg:text-start space-y-6">
         <motion.main
@@ -29,27 +32,37 @@ export const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
         >
-          Build intellectual property, create meaningful impact, and launch your future through mentorship-based innovation and research programs.
+          Build intellectual property, create meaningful impact, and launch your
+          future through mentorship-based innovation and research programs.
         </motion.p>
 
         <motion.div
-          className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 items-center justify-center lg:justify-start"
+          className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 items-center w-full justify-center lg:justify-start"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
         >
-          <Button className="w-full text-white md:w-1/3">Explore Programs</Button>
+          <Button
+            className="w-full text-white md:w-1/3"
+            onClick={() => {
+              const targetElement = document.querySelector("#Programs");
+              targetElement?.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            Explore Programs
+          </Button>
 
-          <a
-            rel="noreferrer noopener"
-            href=""
-            target="_blank"
-            className={`w-full md:w-1/3 ${buttonVariants({
+          {/* <button
+            className={`w-full md:w-1/3 py-3 ${buttonVariants({
               variant: "outline",
             })}`}
+            onClick={() => {
+              const targetElement = document.querySelector("#Contact");
+              targetElement?.scrollIntoView({ behavior: "smooth" });
+            }}
           >
             Apply Now
-          </a>
+          </button> */}
         </motion.div>
       </div>
 
@@ -64,17 +77,16 @@ export const Hero = () => {
       </motion.div>
 
       {/* Shadow Effect - Animated */}
-{/* Shadow Effect - Animated */}
-<motion.div
-  className="absolute shadow inset-0 -z-10 bg-gradient-to-b from-transparent via-black/10 to-black/20 rounded-full blur-2xl sm:blur-3xl"
-  initial={{ scale: 0.8, opacity: 0 }} // bigger start for mobile visibility
-  animate={{ scale: 1.5, opacity: 0.4 }}
-  transition={{
-    scale: { duration: 3, ease: "easeOut" },
-    opacity: { duration: 2, delay: 0.5 },
-  }}
-/>
-
+      {/* Shadow Effect - Animated */}
+      <motion.div
+        className="absolute shadow inset-0 -z-10 bg-gradient-to-b from-transparent via-black/10 to-black/20 rounded-full blur-2xl sm:blur-3xl"
+        initial={{ scale: 0.8, opacity: 0 }} // bigger start for mobile visibility
+        animate={{ scale: 1.5, opacity: 0.4 }}
+        transition={{
+          scale: { duration: 3, ease: "easeOut" },
+          opacity: { duration: 2, delay: 0.5 },
+        }}
+      />
     </section>
   );
 };
