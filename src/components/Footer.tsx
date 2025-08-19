@@ -1,5 +1,4 @@
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { LogoIcon } from "./Icons";
 import { buttonVariants } from "./ui/button";
 import { appRoutes } from "../Routes/route";
 
@@ -47,8 +46,11 @@ export const Footer = () => {
             to={appRoutes.home}
             className="font-bold text-2xl flex items-center gap-2 mb-4"
           >
-            <LogoIcon />
-            DMIF
+            <img
+      src="/logo.png"
+      alt="DMIF Logo"
+      className="h-16 object-contain" // keeps aspect ratio
+    />
           </Link>
           <p className="mt-2 text-gray-400 max-w-xs">
             DMIF provides digital media solutions to help businesses grow online

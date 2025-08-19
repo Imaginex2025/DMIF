@@ -14,7 +14,6 @@ import {
 
 import { buttonVariants } from "./ui/button";
 import { Menu } from "lucide-react";
-import { LogoIcon } from "./Icons";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { appRoutes } from "../Routes/route";
 
@@ -55,12 +54,16 @@ export const Navbar = () => {
       <NavigationMenu className="mx-auto">
         <NavigationMenuList className="container flex h-14 w-screen justify-between px-4">
           {/* Logo */}
-          <NavigationMenuItem className="flex font-bold">
-            <Link to={appRoutes.home} className="flex text-xl font-bold ml-2">
-              <LogoIcon />
-              DMIF
-            </Link>
-          </NavigationMenuItem>
+   <NavigationMenuItem className="flex items-center">
+  <Link to={appRoutes.home} className="flex items-start gap-2">
+    <img
+      src="/logo.png"
+      alt="DMIF Logo"
+      className="h-16 object-contain" // keeps aspect ratio
+    />
+  </Link>
+</NavigationMenuItem>
+
 
           {/* Mobile */}
           <span className="flex md:hidden">

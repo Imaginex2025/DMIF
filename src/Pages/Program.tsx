@@ -280,7 +280,7 @@ const navigate = useNavigate();
   </motion.div>
 
   {/* Stats */}
-  <motion.div
+  {/* <motion.div
     initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
     transition={{ duration: 0.8, delay: 0.2 }}
@@ -307,7 +307,7 @@ const navigate = useNavigate();
         </div>
       </motion.div>
     ))}
-  </motion.div>
+  </motion.div> */}
 </div>
     </div>
   );

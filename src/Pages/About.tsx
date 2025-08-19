@@ -248,7 +248,7 @@ export default function AboutDMIF() {
             </motion.p>
           </motion.div>
 
-          <motion.div
+          {/* <motion.div
             className="flex space-x-4 pt-4"
             initial="hidden"
             whileInView="visible"
@@ -280,7 +280,7 @@ export default function AboutDMIF() {
                 <div className="text-sm text-gray-400">{item.label}</div>
               </motion.div>
             ))}
-          </motion.div>
+          </motion.div> */}
         </motion.div>
 
         {/* Right Image */}
