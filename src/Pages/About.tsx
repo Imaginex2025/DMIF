@@ -16,7 +16,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 export default function AboutDMIF() {
   const [hoveredCard, setHoveredCard] = useState(null);
-  const [activeVideo, setActiveVideo] = useState(null);
+  // const [activeVideo, setActiveVideo] = useState(null);
 
   const uniqueValues = [
     {
@@ -117,9 +117,7 @@ const openVideo = (id: string) => {
 };
 
 
-  const closeVideo = () => {
-    setActiveVideo(null);
-  };
+
 
     const navigate = useNavigate();
   const location = useLocation();
