@@ -110,7 +110,10 @@ export const HeroCards = () => {
           </CardHeader>
 
           <CardContent>
-            <Button className="w-full">Join Now</Button>
+            <Button           onClick={() => {
+              const targetElement = document.querySelector("#Contact");
+              targetElement?.scrollIntoView({ behavior: "smooth" });
+            }} className="w-full">Join Now</Button>
           </CardContent>
 
           <hr className="w-4/5 m-auto mb-4" />
