@@ -1,10 +1,10 @@
 {
-  "name": "shadcn-landing-page-template",
-  "description": "Landing page template utilizing Shadcn, React, Typescript, and Tailwind CSS for rapid development and responsive design.",
+  "name": "dr-madhan-institute-of-future",
+  "description": "Landing page for Dr Madhan Institute of Future built with Shadcn, React, Typescript, and Tailwind CSS for modern and responsive design.",
   "author": {
-    "name": "Leopoldo Miranda",
-    "email": "leomirandadev@gmail.com",
-    "url": "https://github.com/leoMirandaa"
+    "name": "Dr Madhan Institute of Future",
+    "email": "info@drmadhaninstitute.com",
+    "url": "https://drmadhaninstitute.com"
   },
   "license": "MIT",
   "keywords": [
@@ -15,7 +15,9 @@
     "tailwind",
     "landing-page",
     "template",
-    "responsive-design"
+    "responsive-design",
+    "education",
+    "institute"
   ],
   "private": true,
   "version": "1.1.0",
