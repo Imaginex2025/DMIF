@@ -17,7 +17,7 @@ export const About = () => {
 
   const stats: StatsProps[] = [
     { quantity: "120+", description: "Patents Filled" },
-    { quantity: "95+", description: "Grants" },
+    { quantity: "90+", description: "Grants" },
     { quantity: "6", description: "Startup Launched" },
     { quantity: "22+", description: "Years Experience" },
   ];
@@ -116,8 +116,7 @@ export const About = () => {
                 </span>
                 {/* Full version for tablets and up */}
                 <span className="hidden sm:block">
-Dr. Madhan Kumar Srinivasan, an IIM-Calcutta alumnus, 3x TEDx Speaker & Accenture Prolific Inventor (Title-of-Honor given by Accenture), is a Serial Entrepreneur of 6 companies and an Inventor of 127 Patents & 96 Grants that are Commercially Successful Products in the US, UK, Germany, France, Ireland, Australia, Singapore & India. He has built a multi-million-dollar business from scratch and served 300+ international clients worldwide, including many Fortune 500 companies, resulting in $100+ million in cost savings annually. He was an invited speaker at Davos, Switzerland, during the 2024 World Economic Forum Annual Meeting. He is the Founder & Creator of Accenture's Cloud AI capabilities/business line. Developed and deployed the 1st Cloud AI product in the Accenture Cloud Platform, ACP, the flagship cloud product of Accenture. He is a pioneer and part of India’s Cloud Success Story, who built the first private cloud in India at Infosys in 2012
-                </span>
+Dr. Madhan Kumar Srinivasan, an IIM-Calcutta alumnus, 3x TEDx Speaker & Accenture Prolific Inventor (Title-of-Honor given by Accenture), is a Serial Entrepreneur of 6 companies and an Inventor of 127+ Patents & 90+ Grants that are Commercially Successful Products in the US, UK, Germany, France, Ireland, Australia, Singapore & India. He has built a multi-million-dollar business from scratch and served 300+ international clients worldwide, including many Fortune 500 companies, resulting in $100+ million in cost savings annually. He was an invited speaker at Davos, Switzerland, during the 2024 World Economic Forum Annual Meeting. He is the Founder & Creator of Accenture's Cloud AI capabilities/business line. Developed and deployed the 1st Cloud AI product in the Accenture Cloud Platform, ACP, the flagship cloud product of Accenture.</span>
               </motion.p>
             </div>
 

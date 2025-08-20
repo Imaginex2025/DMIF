@@ -88,17 +88,17 @@ const getYoutubeId = (url: string) => {
 const tedxVideos = [
   {
     url: "https://youtu.be/DkrYRX-a3O4?si=HCvcSnxt1Nl2dzOs",
-    title: "Innovation Through Mentorship",
+    title: "Embracing Failure, Empowering Humanity",
     description: "How mentorship transforms raw ideas into innovations",
   },
   {
     url: "https://youtu.be/SzyDXeqrMrQ?si=uS70V3q3z_xzGUF8",
-    title: "The Future of Patent-Based Learning",
+    title: "The Art of Failing Forward – A Teenpreneur’s Perspective",
     description: "Building intellectual property through education",
   },
   {
     url: "https://www.youtube.com/watch?v=ltt8iBBJXpI",
-    title: "From Student to Entrepreneur",
+    title: "Dare to Dream the Unknown",
     description: "The journey of creating value through innovation",
   },
 ].map((video) => {
@@ -596,7 +596,7 @@ const openVideo = (id: string) => {
               }}
             >
               <Card
-                className="bg-gray-900/50 border-green-800/30 text-white backdrop-blur-sm transition-all duration-300 hover:border-green-400/50 hover:shadow-2xl hover:shadow-green-400/10 overflow-hidden"
+                className="bg-gray-900/50 border-green-800/30 h-full text-white backdrop-blur-sm transition-all duration-300 hover:border-green-400/50 hover:shadow-2xl hover:shadow-green-400/10 overflow-hidden"
                 onClick={() => openVideo(video.id)}
               >
                  <div className="relative">
@@ -619,9 +619,6 @@ const openVideo = (id: string) => {
                     {video.title}
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="text-gray-300 text-sm">
-                  {video.description}
-                </CardContent>
               </Card>
             </motion.div>
           ))}
