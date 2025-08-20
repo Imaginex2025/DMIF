@@ -111,11 +111,11 @@ const OurProgram = () => {
                       ))}
                     </motion.div>
                   </div>
-                  <motion.div
+                  {/* <motion.div
                     variants={itemVariants}
                     className="bg-white p-6 rounded-lg border relative overflow-hidden"
-                  >
-                    {/* Offer Ends Soon Badge */}
+                  > */}
+                    {/* Offer Ends Soon Badge
                     <div className="absolute top-4 right-4 bg-red-500 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md animate-pulse">
                       OFFER ENDS SOON!
                     </div>
@@ -124,8 +124,8 @@ const OurProgram = () => {
                       <div className="text-xl sm:text-3xl font-bold text-gray-400 line-through mb-2">$1,500</div>
                       <div className="text-3xl sm:text-5xl font-bold text-orange-600 mb-2">$899</div>
                       <p className="text-xs sm:text-sm text-gray-600">Early Bird Discount - Limited Time</p>
-                    </div>
-                  </motion.div>
+                    </div> */}
+                  {/* </motion.div>s */}
                 </motion.div>
 
                 <motion.div variants={imageVariants} initial="hidden" animate="visible">
@@ -175,12 +175,12 @@ const OurProgram = () => {
                       ))}
                     </motion.div>
                   </div>
-                  <motion.div
+                  {/* <motion.div
                     variants={itemVariants}
                     className="bg-white p-6 rounded-lg border relative"
-                  >
+                  > */}
                     {/* Offer Ends Soon Badge */}
-                    <div className="absolute top-4 right-4 bg-red-500 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md animate-pulse z-10">
+                    {/* <div className="absolute top-4 right-4 bg-red-500 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md animate-pulse z-10">
                       OFFER ENDS SOON!
                     </div>
 
@@ -188,8 +188,8 @@ const OurProgram = () => {
                       <div className="text-xl sm:text-3xl font-bold text-gray-400 line-through mb-2">₹999</div>
                       <div className="text-3xl sm:text-5xl font-bold text-orange-600 mb-2">₹599</div>
                       <p className="text-xs sm:text-sm text-gray-600">Special Discount - Limited Time</p>
-                    </div>
-                  </motion.div>
+                    </div> */}
+                  {/* </motion.div> */}
                 </motion.div>
 
                 <motion.div variants={imageVariants} initial="hidden" animate="visible">
