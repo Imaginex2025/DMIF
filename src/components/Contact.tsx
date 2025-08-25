@@ -48,13 +48,16 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   setIsSubmitting(true);
 
   const formDataToSend = new FormData();
-  formDataToSend.append("access_key", "2901d84b-5a50-43c2-bf60-8c8276c62725"); // replace with your Web3Forms key
+  formDataToSend.append("access_key", "2901d84b-5a50-43c2-bf60-8c8276c62725"); 
+  formDataToSend.append("from_name", formData.firstname + " " + formData.lastname);
+  formDataToSend.append("subject", "New Contact Form Submission");
   formDataToSend.append("firstname", formData.firstname);
   formDataToSend.append("lastname", formData.lastname);
   formDataToSend.append("email", formData.email);
   formDataToSend.append("Contact", formData.Contact);
   formDataToSend.append("message", formData.message);
   formDataToSend.append("track", formData.track);
+  formDataToSend.append("botcheck", ""); // honeypot field
 
   try {
     const response = await fetch("https://api.web3forms.com/submit", {
@@ -84,6 +87,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
   setIsSubmitting(false);
 };
+
 
   const handleFocus = (fieldName: FormDataKeys) => setFocusedField(fieldName);
   const handleBlur = () => setFocusedField(null);
